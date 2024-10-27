@@ -28,7 +28,6 @@ public class TLEffects {
     public static final Holder<MobEffect> TOUGH_SKIN = registerEffect("tough_skin", new NoSpecialEffect(MobEffectCategory.BENEFICIAL, 0x1e2434));
     public static final Holder<MobEffect> FERRYMANS_BLESSING = registerEffect("ferrymans_blessing", new FerrymansBlessingEffect(MobEffectCategory.BENEFICIAL, 0xffffff));
     public static final Holder<MobEffect> AIR_JUMPER = registerEffect("air_jumper", new NoSpecialEffect(MobEffectCategory.BENEFICIAL, 0xffffff));
-    //public static final Holder<MobEffect> SHATTERING_STRIKE = registerEffect("shattering_strike", new NoSpecialEffect(MobEffectCategory.BENEFICIAL, 0x61b3d1));
 
     //NEUTRAL
     public static final Holder<MobEffect> CHRONOS = registerEffect("chronos", new NoSpecialEffect(MobEffectCategory.NEUTRAL, 0x9ad8fa));
@@ -39,7 +38,7 @@ public class TLEffects {
     public static final Holder<MobEffect> TWISTED_FORTUNE = registerEffect("twisted_fortune", new NoSpecialEffect(MobEffectCategory.NEUTRAL, 0x61458f).addAttributeModifier(Attributes.LUCK, TipsyLib.id("twisted_effect.luck"), -4.0, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL).addAttributeModifier(TLAttributes.EFFECT_CHANCE_LUCK, TipsyLib.id("effect.twisted_effect_luck"), 3.0, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 
     //HARMFUL
-    public static final Holder<MobEffect> HEARTBREAK = registerEffect("heartbreak", new HeartBreakEffect(MobEffectCategory.HARMFUL, 0x410909));
+    public static final Holder<MobEffect> HEARTBREAK = registerEffect("heartbreak", new HeartbreakEffect(MobEffectCategory.HARMFUL, 0x410909));
     public static final Holder<MobEffect> BLEEDING = registerEffect("bleeding", new NoSpecialEffect(MobEffectCategory.HARMFUL, 0x410909));
     public static final Holder<MobEffect> INTERNAL_BLEEDING = registerEffect("internal_bleeding", new NoSpecialEffect(MobEffectCategory.HARMFUL, 0x410909));
     public static final Holder<MobEffect> IMPURE = registerEffect("impure", new NoSpecialEffect(MobEffectCategory.HARMFUL, 0x000001));

@@ -26,7 +26,7 @@ public class FracturingEffect extends MobEffect {
     }
 
     public static int getFracturingTicks() {
-        return fracturingTicks / 2; //TODO: Remove division?
+        return fracturingTicks / 2;
     }
 
     @Override

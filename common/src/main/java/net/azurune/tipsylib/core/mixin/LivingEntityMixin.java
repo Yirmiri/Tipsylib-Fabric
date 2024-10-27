@@ -229,7 +229,7 @@ public abstract class LivingEntityMixin {
 
     @Inject(at = @At("HEAD"), method = "heal", cancellable = true)
     public void tipsylib_heal(float amount, CallbackInfo ci) {
-        if (living.hasEffect(TLEffects.INTERNAL_BLEEDING) || living.hasEffect(TLEffects.BLEEDING)) {
+        if (living.hasEffect(TLEffects.BLEEDING)) {
             ci.cancel();
         }
     }

@@ -4,8 +4,8 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 
-public class HeartBreakEffect extends MobEffect {
-    public HeartBreakEffect(MobEffectCategory category, int color) {
+public class HeartbreakEffect extends MobEffect {
+    public HeartbreakEffect(MobEffectCategory category, int color) {
         super(category, color);
     }
 
