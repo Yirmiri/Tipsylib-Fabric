@@ -7,7 +7,9 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import org.spongepowered.asm.mixin.Final;
@@ -18,6 +20,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import java.util.Objects;
 import java.util.Random;
 
 @Mixin(Player.class)
@@ -37,20 +40,31 @@ public abstract class PlayerMixin {
 
         double lifestealAmount = player.getAttributeValue(TLAttributes.LIFESTEAL_HEAL_AMOUNT);
         double lifestealChance = player.getAttributeValue(TLAttributes.LIFESTEAL_CHANCE);
-        if (lifestealChance != 0 && random.nextDouble(100.0) < lifestealChance + effectLuck * 10 && player.isAlive()) {
-            player.heal((float) lifestealAmount);
-            player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.SOUL_ESCAPE, SoundSource.PLAYERS, 1.0F, 1.0F);
-        }
 
-        double criticalStrikeChance = player.getAttributeValue(TLAttributes.CRITICAL_STRIKE_CHANCE);
-        float criticalStrikeMultiplier = (float) player.getAttributeValue(TLAttributes.CRITICAL_STRIKE_DAMAGE_MULTIPLIER);
-        if (criticalStrikeChance != 0 && random.nextDouble(100.0) < criticalStrikeChance + effectLuck * 10 && player.isAlive()) {
-            entity.hurt(source, (amount * criticalStrikeMultiplier));
-            player.playSound(SoundEvents.ARROW_HIT_PLAYER, 1.0F, 1.0F);
-        }
+        if (entity instanceof LivingEntity livingEntity) {
+            if (lifestealChance != 0 && random.nextDouble(100.0) < lifestealChance + effectLuck * 10 && player.isAlive()) {
+                player.heal((float) lifestealAmount);
+                player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.SOUL_ESCAPE, SoundSource.PLAYERS, 1.0F, 1.0F);
+            }
 
-        if (player.hasEffect(TLEffects.ENIGMA)) {
-            player.removeEffect(TLEffects.ENIGMA);
+            double criticalStrikeChance = player.getAttributeValue(TLAttributes.CRITICAL_STRIKE_CHANCE);
+            float criticalStrikeMultiplier = (float) player.getAttributeValue(TLAttributes.CRITICAL_STRIKE_DAMAGE_MULTIPLIER);
+            if (criticalStrikeChance != 0 && random.nextDouble(100.0) < criticalStrikeChance + effectLuck * 10 && player.isAlive()) {
+                livingEntity.hurt(source, (amount * criticalStrikeMultiplier));
+                player.playSound(SoundEvents.ARROW_HIT_PLAYER, 1.0F, 1.0F);
+            }
+
+            if (player.hasEffect(TLEffects.ENIGMA)) {
+                player.removeEffect(TLEffects.ENIGMA);
+            }
+
+//            if (player.hasEffect(TLEffects.SHATTERING_STRIKE) && random.nextDouble(100.0) < 25.0 + effectLuck * 10 && player.isAlive()) {
+//                if (!livingEntity.hasEffect(TLEffects.FRACTURING)) {
+//                    livingEntity.addEffect(new MobEffectInstance(TLEffects.FRACTURING, 4 + player.getEffect(TLEffects.SHATTERING_STRIKE).getAmplifier(), 0));
+//                } else if (livingEntity.hasEffect(TLEffects.FRACTURING) && !livingEntity.getEffect(TLEffects.FRACTURING).isInfiniteDuration()) {
+//                    livingEntity.forceAddEffect(new MobEffectInstance(TLEffects.FRACTURING, livingEntity.getEffect(TLEffects.FRACTURING).getDuration() + 1, livingEntity.getEffect(TLEffects.FRACTURING).getAmplifier()), livingEntity);
+//                }
+//            }
         }
     }
 

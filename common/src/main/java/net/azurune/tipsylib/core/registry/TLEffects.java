@@ -28,6 +28,7 @@ public class TLEffects {
     public static final Holder<MobEffect> TOUGH_SKIN = registerEffect("tough_skin", new NoSpecialEffect(MobEffectCategory.BENEFICIAL, 0x1e2434));
     public static final Holder<MobEffect> FERRYMANS_BLESSING = registerEffect("ferrymans_blessing", new FerrymansBlessingEffect(MobEffectCategory.BENEFICIAL, 0xffffff));
     public static final Holder<MobEffect> AIR_JUMPER = registerEffect("air_jumper", new NoSpecialEffect(MobEffectCategory.BENEFICIAL, 0xffffff));
+    //public static final Holder<MobEffect> SHATTERING_STRIKE = registerEffect("shattering_strike", new NoSpecialEffect(MobEffectCategory.BENEFICIAL, 0x61b3d1));
 
     //NEUTRAL
     public static final Holder<MobEffect> CHRONOS = registerEffect("chronos", new NoSpecialEffect(MobEffectCategory.NEUTRAL, 0x9ad8fa));
