@@ -13,11 +13,18 @@ public class NeoForgeTipsyLibRegistryHelper implements TipsyLibRegistryHelper {
 
     public static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(Registries.MOB_EFFECT, TipsyLib.MOD_ID);
 
+    public static final DeferredRegister<MobEffect> VANILLA_MOB_EFFECTS = DeferredRegister.create(Registries.MOB_EFFECT, "minecraft");
+
     public static final DeferredRegister<Attribute> ATTRIBUTES = DeferredRegister.create(Registries.ATTRIBUTE, TipsyLib.MOD_ID);
 
     @Override
     public Holder<MobEffect> registerEffect(String id, MobEffect mobEffect) {
         return MOB_EFFECTS.register(id, () -> mobEffect);
+    }
+
+    @Override
+    public Holder<MobEffect> registerVanillaEffect(String id, MobEffect mobEffect) {
+        return VANILLA_MOB_EFFECTS.register(id, () -> mobEffect);
     }
 
     @Override

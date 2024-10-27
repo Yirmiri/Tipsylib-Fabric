@@ -73,6 +73,7 @@ public abstract class LivingEntityMixin {
                 .add(TLAttributes.OVERHEAL_AMOUNT)
                 .add(TLAttributes.OVERHEAL_CHANCE)
                 .add(TLAttributes.OVERHEAL_TICK_LENGTH)
+                .add(TLAttributes.EFFECT_CHANCE_LUCK)
         ;
     }
 
@@ -155,8 +156,7 @@ public abstract class LivingEntityMixin {
 
     @Inject(at = @At("HEAD"), method = "hurt", cancellable = true)
     public void tipsylib_hurt(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-        double luck = living.getAttributeValue(Attributes.LUCK);
-
+        double effectLuck = living.getAttributeValue(TLAttributes.EFFECT_CHANCE_LUCK);
         if (living.hasEffect(TLEffects.TOUGH_SKIN) && source.is(net.minecraft.tags.DamageTypeTags.IS_EXPLOSION)) {
             cir.setReturnValue(false);
         }
@@ -170,7 +170,7 @@ public abstract class LivingEntityMixin {
         }
 
         double dodgeChance = living.getAttributeValue(TLAttributes.DODGE_CHANCE);
-        if (!source.is(TLTags.DamageTypeTags.BYPASSES_DODGE) && dodgeChance != 0 && living.isAlive() && random.nextDouble(100.0) < dodgeChance + luck * 10) {
+        if (!source.is(TLTags.DamageTypeTags.BYPASSES_DODGE) && dodgeChance != 0 && living.isAlive() && random.nextDouble(100.0) < dodgeChance + effectLuck * 10) {
             living.level().playSound(null, living.getX(), living.getY(), living.getZ(), SoundEvents.ARMOR_EQUIP_GENERIC, SoundSource.PLAYERS, 1.0F, 1.0F);
             cir.cancel();
         }
@@ -178,13 +178,12 @@ public abstract class LivingEntityMixin {
 
     @Inject(at = @At("HEAD"), method = "createWitherRose", cancellable = true)
     public void tipsylib_onKilledBy(LivingEntity adversary, CallbackInfo ci) {
-        double luck = living.getAttributeValue(Attributes.LUCK);
-
+        double effectLuck = living.getAttributeValue(TLAttributes.EFFECT_CHANCE_LUCK);
         if (adversary != null && adversary.isAlive()) {
             double overhealChance = adversary.getAttributeValue(TLAttributes.OVERHEAL_CHANCE);
             int overhealAmount = (int) adversary.getAttributeValue(TLAttributes.OVERHEAL_AMOUNT);
             int overhealLength = (int) adversary.getAttributeValue(TLAttributes.OVERHEAL_TICK_LENGTH);
-            if (overhealChance != 0 && random.nextDouble(100.0) < overhealChance + luck * 10) {
+            if (overhealChance != 0 && random.nextDouble(100.0) < overhealChance + effectLuck * 10) {
                 adversary.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, overhealLength, overhealAmount));
             }
         }
@@ -192,11 +191,10 @@ public abstract class LivingEntityMixin {
 
     @ModifyVariable(at = @At("HEAD"), method = "hurt", argsOnly = true)
     public float tipsylib_shatterSpleen(float amount) {
-        double luck = living.getAttributeValue(Attributes.LUCK);
-
+        double effectLuck = living.getAttributeValue(TLAttributes.EFFECT_CHANCE_LUCK);
         double vulnerabilityChance = living.getAttributeValue(TLAttributes.VULNERABILITY_CHANCE);
         float vulnerabilityModifier = (float) living.getAttributeValue(TLAttributes.VULNERABILITY_MODIFIER);
-        if (vulnerabilityChance != 0 && living.isAlive() && random.nextDouble(100.0) < vulnerabilityChance + luck * 10) {
+        if (vulnerabilityChance != 0 && living.isAlive() && random.nextDouble(100.0) < vulnerabilityChance + effectLuck * 10) {
             return amount + amount * vulnerabilityModifier;
         }
         return amount;
@@ -204,28 +202,26 @@ public abstract class LivingEntityMixin {
 
     @Inject(at = @At("TAIL"), method = "getDamageAfterMagicAbsorb")
     public void tipsylib_modifyAppliedDamage(DamageSource source, float amount, CallbackInfoReturnable<Float> cir) {
-        double luck = living.getAttributeValue(Attributes.LUCK);
-
         Entity entity = source.getEntity();
         if (entity instanceof LivingEntity attacker && attacker.isAlive()) {
-
+            double effectLuck = living.getAttributeValue(TLAttributes.EFFECT_CHANCE_LUCK);
             double backlashChance = living.getAttributeValue(TLAttributes.BACKLASH_CHANCE);
             double backlashDamagePercent = living.getAttributeValue(TLAttributes.BACKLASH_DAMAGE_PERCENT);
-            if (backlashChance != 0 && random.nextDouble(100.0) < backlashChance + luck * 10) {
+            if (backlashChance != 0 && random.nextDouble(100.0) < backlashChance + effectLuck * 10) {
                 DamageSource damagesource = new DamageSource(entity.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(TLDamageTypes.BACKLASH));
                 attacker.hurt(damagesource, (amount * (float) backlashDamagePercent));
             }
 
             double retaliationChance = living.getAttributeValue(TLAttributes.RETALIATION_CHANCE);
             double retaliationDamageAmount = living.getAttributeValue(TLAttributes.RETALIATION_DAMAGE_AMOUNT);
-            if (retaliationChance != 0 && random.nextDouble(100.0) < retaliationChance + luck * 10) {
+            if (retaliationChance != 0 && random.nextDouble(100.0) < retaliationChance + effectLuck * 10) {
                 DamageSource damagesource = new DamageSource(entity.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(TLDamageTypes.RETALIATION));
                 attacker.hurt(damagesource, (float) retaliationDamageAmount);
             }
 
             double burningRetaliationChance = living.getAttributeValue(TLAttributes.BURNING_RETALIATION_CHANCE);
             double burningRetaliationLength = living.getAttributeValue(TLAttributes.BURNING_RETALIATION_LENGTH);
-            if (burningRetaliationChance != 0 && random.nextDouble(100.0) < burningRetaliationChance + luck * 10) {
+            if (burningRetaliationChance != 0 && random.nextDouble(100.0) < burningRetaliationChance + effectLuck * 10) {
                 attacker.igniteForSeconds((float) burningRetaliationLength);
             }
         }

@@ -9,6 +9,7 @@
     "BlockItemMixin",
     "LivingEntityMixin",
     "MilkBucketItemMixin",
+    "MobEffectsMixin",
     "PlayerMixin",
     "StatusEffectInstanceMixin"
   ],

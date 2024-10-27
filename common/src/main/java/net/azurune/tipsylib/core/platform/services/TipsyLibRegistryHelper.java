@@ -9,5 +9,7 @@ public interface TipsyLibRegistryHelper {
 
     Holder<MobEffect> registerEffect(String id, MobEffect mobEffect);
 
+    Holder<MobEffect> registerVanillaEffect(String id, MobEffect mobEffect);
+
     Holder<Attribute> registerAttribute(String id, double base, double min, double max);
 }

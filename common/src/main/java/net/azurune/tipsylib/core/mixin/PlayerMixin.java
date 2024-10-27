@@ -30,21 +30,21 @@ public abstract class PlayerMixin {
 
     @Inject(at = @At("TAIL"), method = "attack", cancellable = true)
     public void tipsylib_attack(Entity entity, CallbackInfo ci) {
-        double luck = player.getAttributeValue(Attributes.LUCK);
+        double effectLuck = player.getAttributeValue(TLAttributes.EFFECT_CHANCE_LUCK);
 
-        float amount = (float)player.getAttributeValue(Attributes.ATTACK_DAMAGE);
+        float amount = (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE);
         DamageSource source = player.damageSources().playerAttack(player);
 
         double lifestealAmount = player.getAttributeValue(TLAttributes.LIFESTEAL_HEAL_AMOUNT);
         double lifestealChance = player.getAttributeValue(TLAttributes.LIFESTEAL_CHANCE);
-        if (lifestealChance != 0 && random.nextDouble(100.0) < lifestealChance + luck * 10 && player.isAlive()) {
+        if (lifestealChance != 0 && random.nextDouble(100.0) < lifestealChance + effectLuck * 10 && player.isAlive()) {
             player.heal((float) lifestealAmount);
             player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.SOUL_ESCAPE, SoundSource.PLAYERS, 1.0F, 1.0F);
         }
 
         double criticalStrikeChance = player.getAttributeValue(TLAttributes.CRITICAL_STRIKE_CHANCE);
         float criticalStrikeMultiplier = (float) player.getAttributeValue(TLAttributes.CRITICAL_STRIKE_DAMAGE_MULTIPLIER);
-        if (criticalStrikeChance != 0 && random.nextDouble(100.0) < criticalStrikeChance + luck * 10 && player.isAlive()) {
+        if (criticalStrikeChance != 0 && random.nextDouble(100.0) < criticalStrikeChance + effectLuck * 10 && player.isAlive()) {
             entity.hurt(source, (amount * criticalStrikeMultiplier));
             player.playSound(SoundEvents.ARROW_HIT_PLAYER, 1.0F, 1.0F);
         }

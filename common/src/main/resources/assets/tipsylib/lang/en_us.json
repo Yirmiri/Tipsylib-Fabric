@@ -51,6 +51,7 @@
   "attribute.name.tipsylib.overheal_chance": "Overheal Chance",
   "attribute.name.tipsylib.overheal_tick_length": "Overheal Length",
   "attribute.name.tipsylib.overheal_amount": "Overheal Amount",
+  "attribute.name.tipsylib.effect_chance_luck": "Effect Chance Luck",
 
   "effect.tipsylib.traversal.no_spawn_point": "Traversal requires a spawn point",
   "effect.tipsylib.demise.no_death_point": "Ferryman's Blessing requires a death point",

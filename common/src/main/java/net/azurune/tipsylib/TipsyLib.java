@@ -20,4 +20,8 @@ public class TipsyLib {
     public static ResourceLocation id(String id) {
         return ResourceLocation.fromNamespaceAndPath(TipsyLib.MOD_ID, id);
     }
+
+    public static ResourceLocation vanillaId(String id) {
+        return ResourceLocation.fromNamespaceAndPath("minecraft", id);
+    }
 }

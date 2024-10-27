@@ -19,7 +19,7 @@ Version Release v3.2.0 MC-1.21.1
 •   Does not push away items while the player is crouching
 
   Air Jumper (Beneficial Effect)
-•   Allows the player to jump while mid air
+•   Allows the player to jump while midair
 •   Texture by @Pearlision!
 
   Fracturing (Negative Effect)
@@ -29,6 +29,8 @@ Version Release v3.2.0 MC-1.21.1
 •   If the effect is NOT greater than level I it will not be able to inflict lethal damage
 
   Misc Additions
+•   Added the effect_chance luck attribute, grants additional chance for other effect chance based things to activate
+•   Luck now grants an additional attribute being the effect_chance_luck
 •   Added a new mob effect tag called "chronos_blacklisted", which lists effects that should not freeze from chronos
 •   Added a new damage type tag called "bypasses_dodge", which lists damage types that should bypass the dodge attribute's invulnerability
 •   When possible attributes and effects are now affected by the luck attribute

@@ -18,6 +18,13 @@ public class FabricTipsyLibRegistryHelper implements TipsyLibRegistryHelper {
         var mobEffectReference = Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, TipsyLib.id(id), mobEffect);
         return mobEffectReference;
     }
+
+    @Override
+    public Holder<MobEffect> registerVanillaEffect(String id, MobEffect mobEffect) {
+        var mobEffectReference = Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, TipsyLib.vanillaId(id), mobEffect);
+        return mobEffectReference;
+    }
+
     @Override
     public Holder<Attribute> registerAttribute(String id, double base, double min, double max) {
         Attribute attribute = new RangedAttribute("attribute.name." + TipsyLib.MOD_ID + "." + id, base, min, max).setSyncable(true);
