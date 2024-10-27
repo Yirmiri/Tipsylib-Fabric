@@ -35,6 +35,7 @@ public class TLEffects {
     public static final Holder<MobEffect> GRAVITY_RESISTANCE = registerEffect("gravity_resistance", new GravityResistanceEffect(MobEffectCategory.NEUTRAL, 0xa77289));
     public static final Holder<MobEffect> MAGNETISM = registerEffect("magnetism", new MagnetismEffect(MobEffectCategory.NEUTRAL, 0xc12839));
     public static final Holder<MobEffect> REPULSION = registerEffect("repulsion", new RepulsionEffect(MobEffectCategory.NEUTRAL, 0x21669f));
+    public static final Holder<MobEffect> TWISTED_FORTUNE = registerEffect("twisted_fortune", new NoSpecialEffect(MobEffectCategory.NEUTRAL, 0x61458f).addAttributeModifier(Attributes.LUCK, TipsyLib.id("twisted_effect.luck"), -4.0, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL).addAttributeModifier(TLAttributes.EFFECT_CHANCE_LUCK, TipsyLib.id("effect.twisted_effect_luck"), 3.0, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 
     //HARMFUL
     public static final Holder<MobEffect> HEARTBREAK = registerEffect("heartbreak", new HeartBreakEffect(MobEffectCategory.HARMFUL, 0x410909));

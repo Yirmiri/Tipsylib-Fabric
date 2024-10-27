@@ -10,6 +10,9 @@ Version Release v3.2.0 MC-1.21.1
 •   Increases the tick speed of all active effects (increased speed per effect level)
 •   Effect is unaffected by chronos but will increase the speed of chronos
 
+  Twisted Fortune (Neutral Effect)
+•   Increases effect chance luck by +3 but decreases "normal" luck by -4
+
   Magnetism (Neutral Effect)
 •   Pulls in items on the ground that are within 4 blocks of distance (+1 block of distance per level) of the player with this effect
 •   Does not pull in items while the player is crouching
@@ -30,7 +33,7 @@ Version Release v3.2.0 MC-1.21.1
 
   Misc Additions
 •   Added the effect_chance luck attribute, grants additional chance for other effect chance based things to activate
-•   Luck now grants an additional attribute being the effect_chance_luck
+•   Luck now grants an additional attribute being the effect chance luck
 •   Added a new mob effect tag called "chronos_blacklisted", which lists effects that should not freeze from chronos
 •   Added a new damage type tag called "bypasses_dodge", which lists damage types that should bypass the dodge attribute's invulnerability
 •   When possible attributes and effects are now affected by the luck attribute
