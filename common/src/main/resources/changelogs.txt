@@ -40,6 +40,7 @@ Version Release v3.2.0 MC-1.21.1
 •   Re-added contributor capes
 
   Changes
+•   Confusion now hides hud icons
 •   Chronos no longer freezes any effect extending the InstantenousMobEffect class (aka instant effects such as instant health no longer freeze)
 •   Perception and restoration have changed their range of effect to only starting at 4 blocks at level I and adding 1 block per level
 •   Water walking no longer slows down the player when walking on water (increases movement speed on water per level of effect)

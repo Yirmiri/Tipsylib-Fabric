@@ -67,7 +67,7 @@ public abstract class PlayerMixin {
 //            }
         }
     }
-
+//TODO: use rewritten code from Aurynium to allow infinite jumps
     @Inject(at = @At("HEAD"), method = "tick", cancellable = true)
     public void tipsylib_tickMovement(CallbackInfo ci) {
         if (player.hasEffect(TLEffects.AIR_JUMPER)) {

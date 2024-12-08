@@ -15,6 +15,7 @@
   ],
   "client": [
     "FogRendererMixin",
+    "GuiMixin",
     "PlayerListEntryMixin"
   ],
   "server": [
