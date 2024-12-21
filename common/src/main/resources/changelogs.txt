@@ -6,6 +6,9 @@ Literally just a secret .txt file of every single update's changelog
 
 Version Release v4.0.0 MC-1.21.1
 
+  Changes
+•   Changed the Mod ID from tipsylib to lydialib
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Version Release v3.2.0 MC-1.21.1 (TipsyLib)
