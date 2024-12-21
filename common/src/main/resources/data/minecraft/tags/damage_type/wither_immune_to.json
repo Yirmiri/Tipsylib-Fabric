@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "tipsylib:backlash",
-    "tipsylib:creative_shock"
+    "lydialib:backlash",
+    "lydialib:creative_shock"
   ]
 }

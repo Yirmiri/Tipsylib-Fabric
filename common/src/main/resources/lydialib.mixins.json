@@ -1,0 +1,27 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.azurune.lydialib.core.mixin",
+  "refmap": "${mod_id}.refmap.json",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "AbstractArrowMixin",
+    "BlockItemMixin",
+    "LivingEntityMixin",
+    "MilkBucketItemMixin",
+    "MobEffectsMixin",
+    "PlayerMixin",
+    "StatusEffectInstanceMixin"
+  ],
+  "client": [
+    "FogRendererMixin",
+    "GuiMixin",
+    "PlayerListEntryMixin"
+  ],
+  "server": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
+

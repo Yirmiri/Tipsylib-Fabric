@@ -1,8 +1,8 @@
 {
   "replace": false,
   "values": [
-    "tipsylib:hemolacria",
-    "tipsylib:venom",
-    "tipsylib:creative_shock"
+    "lydialib:hemolacria",
+    "lydialib:venom",
+    "lydialib:creative_shock"
   ]
 }

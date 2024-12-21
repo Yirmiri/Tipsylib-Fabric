@@ -4,7 +4,148 @@ Literally just a secret .txt file of every single update's changelog
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Version Release v2.0.8 MC-1.20.1
+Version Release v4.0.0 MC-1.21.1
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Version Release v3.2.0 MC-1.21.1 (TipsyLib)
+
+  Tempus (Neutral Effect)
+•   Increases the tick speed of all active effects (increased speed per effect level)
+•   Effect is unaffected by chronos but will increase the speed of chronos
+
+  Twisted Fortune (Neutral Effect)
+•   Increases effect chance luck by +3 but decreases "normal" luck by -4
+
+  Magnetism (Neutral Effect)
+•   Pulls in items on the ground that are within 4 blocks of distance (+1 block of distance per level) of the player with this effect
+•   Does not pull in items while the player is crouching
+
+  Repulsion (Neutral Effect)
+•   Pushes away items on the ground that are within 4 blocks of distance (+1 block of distance per level) of the player with this effect
+•   Does not push away items while the player is crouching
+
+  Air Jumper (Beneficial Effect)
+•   Allows the player to jump while midair
+•   Texture by @Pearlision!
+
+  Fracturing (Negative Effect)
+•   When this effect ends it will deal damage based on the amount of time the entity had the effect for (more info below)
+•   Deals 1 damage per second of having this effect
+•   Still deals damage when milk is drank however it will deal less damage if drank before the end of the effect as the time passed will be less
+•   If the effect is NOT greater than level I it will not be able to inflict lethal damage
+
+  Misc Additions
+•   Added the effect_chance luck attribute, grants additional chance for other effect chance based things to activate
+•   Luck now grants an additional attribute being the effect chance luck
+•   Added a new mob effect tag called "chronos_blacklisted", which lists effects that should not freeze from chronos
+•   Added a new damage type tag called "bypasses_dodge", which lists damage types that should bypass the dodge attribute's invulnerability
+•   When possible attributes and effects are now affected by the luck attribute
+•   Re-added contributor capes
+
+  Changes
+•   Confusion now hides hud icons
+•   Chronos no longer freezes any effect extending the InstantenousMobEffect class (aka instant effects such as instant health no longer freeze)
+•   Perception and restoration have changed their range of effect to only starting at 4 blocks at level I and adding 1 block per level
+•   Water walking no longer slows down the player when walking on water (increases movement speed on water per level of effect)
+•   Internal bleeding no longer stops all forms of healing but only natural regeneration
+
+  Fixes
+•   Fixed a crash caused by igniting tnt near living entities
+•   Fixed an issue with creative shock's death message when dying to another player where it would state the attacker's name where the target's name should be
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Version Release v3.1.1 MC-1.21(.1) (TipsyLib)
+
+  Changes
+•   The critical strike chance attribute now only affects player entities
+
+  Fixes
+•   Fixed a major crash that was caused when any non-living entity was hurt
+•   Fixed some damage types applying knockback when they shouldn't
+•   Fixed critical strike chance using an incorrect sound upon hitting a critical hit
+
+  Notes
+•   Mod now supports 1.21.1 but should still work on 1.21
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Version Release v3.1.0 MC-1.21 (TipsyLib)
+
+  Fixes
+•   Fixed contributor capes not displaying
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Version Release v3.0.0 MC-1.21 (TipsyLib)
+
+  Note: The entire mod has been rewritten for MultiLoader among many other large changes which means it will be incompatible with older versions
+With that being said, the changelog will be written as if this were the first version of the mod (aka explaining what everything does).
+
+  Beneficial Effects
+•   Water Walking - allows walking on water unless shifting
+•   Lava Walking - allows walking on lava unless shifting (no longer grants fire resistance)
+•   Trail Blazing - spawns a fire trail behind the user (no longer grants fire resistance)
+•   Perception - grants glowing to nearby entities to the effected entity
+•   Pyromaniac - slowly heals the entity while inside fire (no longer grants fire resistance)
+•   Steel Feet - grants immunity to fall damage
+•   Berserk - increases the entity's damage the lower their health points are
+•   Traversal - teleports the player to their respawn location
+•   Adrenaline - increases the entity's speed the lower their health points are
+•   Enigma - other entities cannot see this entity (disappears after attacking)
+•   Freeze Resistance - grants immunity to freezing
+•   Restoration - grants regeneration to nearby entities to the effected entity
+•   Brimstone Vision - removes the fog of lava
+•   Tough Skin - grants explosion immunity
+
+  Neutral Effects
+•   Chronos - stops all other effects from ticking
+•   Gravity Resistance - grants immunity to levitation, jump boost, fast falling, and slow falling
+
+  Negative Effects
+•   Heartbreak - reduces max health points of the entity (updates health points automatically)
+•   Bleeding - stops all forms of healing to the entity
+•   Impure - milk bucket does not clear effects to the player
+•   Venom - lethal poison. thats it.
+•   Confusion - removes the ability to view hearts or coords
+•   Hemolacria - deals overtime damage that penetrates all forms of protection
+•   Fast Falling - backwards jump boost
+•   Creative Shock - deals damage when placing blocks
+•   Internal Bleeding - stops only natural regeneration
+•   Smouldering - constantly burns the entity
+•   Ferryman's Blessing - teleports the player to their death location
+
+  Attributes
+•   Backlash Chance - chance to deal a % of the damage back to an attacker entity
+•   Backlash Damage Percent - percentage of damage dealt back
+•   Arrow Damage Modifier - increased damage for arrows
+•   Dodge Chance - chance to not take damage (does not work on damage types in bypasses_immunity_frames)
+•   Lifesteal Chance - chance to heal from attacking
+•   Lifesteal Amount - amount healed from attacking
+•   Vulnerability Chance - chance to take increased damage
+•   Vulnerability Modifier - percentage of increased damage taken
+•   Retaliation Chance - chance to deal flat damage to an attacker
+•   Retaliation Amount - amount of flat damage dealt back
+•   Burning Retaliation Chance - chance to burn an attacker
+•   Burning Retaliation Length - time in seconds to burn an attacker
+•   Critical Strike Chance - chance to deal increased damage
+•   Critical Strike Damage Multiplier - multiplier of increased damage
+•   Overheal Chance - chance to gain absorption hearts on kill
+•   Overheal Length - length in ticks overheal lasts
+•   Overheal Amount - amplifier of absorption given on overheal
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Version Release v2.0.9 MC-1.21 (TipsyLib)
+
+  Additions
+•   Added brimstone vision, dissipates fog under lava
+•   Added zh_cn translations thanks to "LILPRINCES"
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Version Release v2.0.8 MC-1.20.1 (TipsyLib)
 
   Additions
 •   Added smouldering, causes the entity to constantly burn
@@ -20,7 +161,7 @@ Version Release v2.0.8 MC-1.20.1
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Version Release v2.0.7 MC-1.20.1
+Version Release v2.0.7 MC-1.20.1 (TipsyLib)
 
   Additions
 •   Added caffeinated and caffeine crash, caffeinated increases most stats while caffeine crash does the opposite.
@@ -32,7 +173,7 @@ Caffeine crash will be applied when caffeinated ends but caffeinated can overrid
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Version Release v2.0.6 MC-1.20.1
+Version Release v2.0.6 MC-1.20.1 (TipsyLib)
 
   Changes
 •   Devour no longer releases particles
@@ -45,7 +186,7 @@ Version Release v2.0.6 MC-1.20.1
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Version Release v2.0.5 MC-1.20.1
+Version Release v2.0.5 MC-1.20.1 (TipsyLib)
 
   Fixes
 •   Fixed a crash when dropping an item
@@ -53,14 +194,14 @@ Version Release v2.0.5 MC-1.20.1
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Version Release v2.0.4 MC-1.20.1
+Version Release v2.0.4 MC-1.20.1 (TipsyLib)
 
   Fixes
 •   Fixed a crash due to a missing mixin
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Version Release v2.0.3 MC-1.20.1
+Version Release v2.0.3 MC-1.20.1 (TipsyLib)
 
   Additions
 •   Added restoration, heals all entities in a small radius (radius increases with level)
@@ -73,7 +214,7 @@ Version Release v2.0.3 MC-1.20.1
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Version Release v2.0.2 MC-1.20.1
+Version Release v2.0.2 MC-1.20.1 (TipsyLib)
 
   Additions
 •   Added devour, has a chance to heal the player (1hp/level) when attacking an entity (increased chance with luck)
@@ -95,7 +236,7 @@ Version Release v2.0.2 MC-1.20.1
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Version Release v2.0.1 MC-1.20.1
+Version Release v2.0.1 MC-1.20.1 (TipsyLib)
 
   Additions
 •   Brought back fast falling, works similar to the original effect in older versions
@@ -104,7 +245,7 @@ Version Release v2.0.1 MC-1.20.1
   Changes
 •   Burning thorns now increases burning length by 1 second every level (5 as a base level)
 •   Traversal now works with respawn anchors
-•   No more Tipsy Lib ;), we are TipsyLib again
+•   No more Tipsy Lib ;), we are Lydialib again
 
   Fixes
 •   Fixed chronos not ticking itself
@@ -113,7 +254,7 @@ Version Release v2.0.1 MC-1.20.1
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Version Release v2.0.0 MC-1.20.1
+Version Release v2.0.0 MC-1.20.1 (TipsyLib)
 
   Additions
 •   Ported the mod to MultiLoader
@@ -121,7 +262,7 @@ Version Release v2.0.0 MC-1.20.1
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Version Release v1.1.3 (Fabric/Quilt: 1.20.1)
+Version Release v1.1.3 (Fabric/Quilt: 1.20.1) (TipsyLib)
 
   Additions
 •   Added hemolacria, deals armor & enchantment piercing damage to the effected entity over time
@@ -136,7 +277,7 @@ Version Release v1.1.3 (Fabric/Quilt: 1.20.1)
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Version Release v1.1.2 (Fabric/Quilt: 1.20.1)
+Version Release v1.1.2 (Fabric/Quilt: 1.20.1) (TipsyLib)
 
   Additions
 •   Added venom, deals lethal damage to the effected entity over time
@@ -152,7 +293,7 @@ Version Release v1.1.2 (Fabric/Quilt: 1.20.1)
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Version Release v1.1.1 (Fabric/Quilt: 1.20.1)
+Version Release v1.1.1 (Fabric/Quilt: 1.20.1) (TipsyLib)
 Literally Baby Sized... idk man
 
   Additions
@@ -160,7 +301,7 @@ Literally Baby Sized... idk man
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Version Release v1.1.0 (Fabric/Quilt: 1.20.1)
+Version Release v1.1.0 (Fabric/Quilt: 1.20.1) (TipsyLib)
 Small Update
 
   Additions
@@ -181,7 +322,7 @@ Small Update
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Version Release v1.0.0 (Fabric/Quilt: 1.20.1)
+Version Release v1.0.0 (Fabric/Quilt: 1.20.1) (TipsyLib)
 Release Update
 
   Additions
@@ -207,7 +348,7 @@ Release Update
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Version Release v1.1.0 (Forge/NeoForge: 1.20.1)
+Version Release v1.1.0 (Forge/NeoForge: 1.20.1) (TipsyLib)
 Small Update
 
   Changes
@@ -226,7 +367,7 @@ Small Update
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Version Release v1.0.2.1 (Forge/NeoForge: 1.20.1)
+Version Release v1.0.2.1 (Forge/NeoForge: 1.20.1) (TipsyLib)
 Literally the smallest update ever
 
   Additions
@@ -235,7 +376,7 @@ Literally the smallest update ever
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Version Release v1.0.2 (Forge/NeoForge: 1.20.1)
+Version Release v1.0.2 (Forge/NeoForge: 1.20.1) (TipsyLib)
 Small Update || 4/14/24
 
   Additions
@@ -250,7 +391,7 @@ Small Update || 4/14/24
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Version Release v1.0.1 (Forge/NeoForge: 1.20.1)
+Version Release v1.0.1 (Forge/NeoForge: 1.20.1) (TipsyLib)
 Small Update || 4/11/24
 
   Additions
@@ -264,7 +405,7 @@ Small Update || 4/11/24
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Version Release v1.0.0 (Forge/NeoForge: 1.20.1)
+Version Release v1.0.0 (Forge/NeoForge: 1.20.1) (TipsyLib)
 Release Update
 
   Additions
