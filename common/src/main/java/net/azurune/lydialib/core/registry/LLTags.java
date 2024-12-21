@@ -17,10 +17,6 @@ public class LLTags {
 
     public static class DamageTypeTags {
         public static final TagKey<DamageType> BYPASSES_DODGE = tag("bypasses_dodge");
-        public static final TagKey<DamageType> PHYSICAL_DAMAGE = tag("physical_damage");
-        public static final TagKey<DamageType> MAGIC_DAMAGE = tag("magic_damage");
-        public static final TagKey<DamageType> BLAST_DAMAGE = tag("blast_damage");
-        public static final TagKey<DamageType> ELEMENTAL_DAMAGE = tag("elemental_damage");
 
         private static TagKey<DamageType> tag(String id) {
             return TagKey.create(Registries.DAMAGE_TYPE, LydiaLib.id(id));

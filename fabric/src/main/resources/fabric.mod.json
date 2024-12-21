@@ -20,6 +20,9 @@
     "entrypoints": {
         "main": [
             "net.azurune.lydialib.FabricLydiaLib"
+        ],
+        "fabric-datagen": [
+            "net.azurune.lydialib.FabricLydiaLibDataGenerator"
         ]
     },
     "mixins": [

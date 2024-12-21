@@ -25,7 +25,7 @@ public class FerrymansBlessingEffect extends InstantenousMobEffect {
                     int z = posLocation.get().pos().getZ();
                     player.randomTeleport(x, y + 1, z, true);
                 } else {
-                    player.sendSystemMessage(Component.translatable("effect.tipsylib.demise.no_death_point"), true);
+                    player.sendSystemMessage(Component.translatable("effect.lydialib.no_death_point"), true);
                 }
             }
         }

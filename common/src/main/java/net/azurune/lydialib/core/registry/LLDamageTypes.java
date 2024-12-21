@@ -18,3 +18,4 @@ public class LLDamageTypes {
         return ResourceKey.create(Registries.DAMAGE_TYPE, LydiaLib.id(damageType.msgId()));
     }
 }
+//TODO: Remove unused whenever we get around to it cuz guhgih gfijo what?

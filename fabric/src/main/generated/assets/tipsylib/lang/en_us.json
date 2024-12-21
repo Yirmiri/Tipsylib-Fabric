@@ -1,0 +1,22 @@
+{
+  "effect.lydialib.berserk": "Berserk",
+  "effect.lydialib.berserk.description": "Increases the attack damage of the user the lower their current health points are.",
+  "effect.lydialib.ferrymans_blessing": "Ferryman's Blessing",
+  "effect.lydialib.ferrymans_blessing.description": "Teleports the user to their last death location if they have one.",
+  "effect.lydialib.heartbreak": "Heartbreak",
+  "effect.lydialib.heartbreak.description": "Decreases the maximum amount of health points of the user.",
+  "effect.lydialib.lava_walking": "Lava Walking",
+  "effect.lydialib.lava_walking.description": "Allows the user to stand on lava.",
+  "effect.lydialib.magnetism": "Magnetism",
+  "effect.lydialib.magnetism.description": "Pulls items in towards the user.",
+  "effect.lydialib.no_death_point": "Cannot find a valid death location to teleport to.",
+  "effect.lydialib.no_spawn_point": "Cannot find a valid spawn location to teleport to.",
+  "effect.lydialib.perception": "Perception",
+  "effect.lydialib.perception.description": "Grants glowing to all entities nearby the user.",
+  "effect.lydialib.repulsion": "Repulsion",
+  "effect.lydialib.repulsion.description": "Pushes items away from the user.",
+  "effect.lydialib.traversal": "Traversal",
+  "effect.lydialib.traversal.description": "Teleports the user to their spawn point if they have one set.",
+  "effect.lydialib.water_walking": "Water Walking",
+  "effect.lydialib.water_walking.description": "Allows the user to stand on water."
+}

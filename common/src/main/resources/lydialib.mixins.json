@@ -5,18 +5,9 @@
   "refmap": "${mod_id}.refmap.json",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "AbstractArrowMixin",
-    "BlockItemMixin",
-    "LivingEntityMixin",
-    "MilkBucketItemMixin",
-    "MobEffectsMixin",
-    "PlayerMixin",
-    "StatusEffectInstanceMixin"
+    "MobEffectsMixin"
   ],
   "client": [
-    "FogRendererMixin",
-    "GuiMixin",
-    "PlayerListEntryMixin"
   ],
   "server": [
   ],

@@ -6,7 +6,10 @@ Literally just a secret .txt file of every single update's changelog
 
 Version Release v4.0.0 MC-1.21.1
 
-  Changes
+  Effects
+•   Perception now no longer grants the user with the effect glowing but only nearby entities
+
+  Technical
 •   Changed the Mod ID from tipsylib to lydialib
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

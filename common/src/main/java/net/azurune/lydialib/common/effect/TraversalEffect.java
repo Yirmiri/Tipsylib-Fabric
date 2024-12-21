@@ -24,10 +24,10 @@ public class TraversalEffect extends InstantenousMobEffect {
                         pos = Vec3.atBottomCenterOf(player.getRespawnPosition());
                         player.teleportTo(pos.x, pos.y, pos.z);
                     } else {
-                        player.displayClientMessage(Component.translatable("effect.tipsylib.traversal.no_spawn_point"), true);
+                        player.displayClientMessage(Component.translatable("effect.lydialib.no_spawn_point"), true);
                     }
                 } else {
-                    player.displayClientMessage(Component.translatable("effect.tipsylib.traversal.no_spawn_point"), true);
+                    player.displayClientMessage(Component.translatable("effect.lydialib.no_spawn_point"), true);
                 }
             }
         }
