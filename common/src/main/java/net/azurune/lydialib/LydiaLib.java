@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class LydiaLib {
+    public static final String VANILLA_ID = "minecraft";
     public static final String MOD_ID = "lydialib";
     public static final String MOD_NAME = "LydiaLib";
     public static final Logger LOG = LoggerFactory.getLogger(MOD_NAME);
@@ -21,7 +22,11 @@ public class LydiaLib {
         return ResourceLocation.fromNamespaceAndPath(LydiaLib.MOD_ID, id);
     }
 
+    public static ResourceLocation customId(String modid, String id) {
+        return ResourceLocation.fromNamespaceAndPath(modid, id);
+    }
+
     public static ResourceLocation vanillaId(String id) {
-        return ResourceLocation.fromNamespaceAndPath("minecraft", id);
+        return ResourceLocation.fromNamespaceAndPath(VANILLA_ID, id);
     }
 }

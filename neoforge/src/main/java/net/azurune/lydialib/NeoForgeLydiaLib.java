@@ -9,7 +9,14 @@ public class NeoForgeLydiaLib {
     
     public NeoForgeLydiaLib(IEventBus eventBus) {
         LydiaLib.init();
-        NeoForgeLydiaLibRegistryHelper.MOB_EFFECTS.register(eventBus);
-        NeoForgeLydiaLibRegistryHelper.ATTRIBUTES.register(eventBus);
+
+        NeoForgeLydiaLibRegistryHelper.BLOCK.register(eventBus);
+        NeoForgeLydiaLibRegistryHelper.ITEM.register(eventBus);
+        NeoForgeLydiaLibRegistryHelper.MOB_EFFECT.register(eventBus);
+        NeoForgeLydiaLibRegistryHelper.ATTRIBUTE.register(eventBus);
+        NeoForgeLydiaLibRegistryHelper.BLOCK_ENTITY_TYPE.register(eventBus);
+        NeoForgeLydiaLibRegistryHelper.ENTITY_TYPE.register(eventBus);
+        NeoForgeLydiaLibRegistryHelper.SOUND_EVENT.register(eventBus);
+        NeoForgeLydiaLibRegistryHelper.CREATIVE_MODE_TAB.register(eventBus);
     }
 }
